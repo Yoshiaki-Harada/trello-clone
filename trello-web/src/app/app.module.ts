@@ -2,15 +2,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { BoardPageComponent } from './components/pages/board-page/board-page.component';
+import { BoardTemplateComponent } from './components/templates/board-template/board-template.component';
+import { HeaderComponent } from './components/organisms/header/header.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
+  declarations: [AppComponent, BoardPageComponent, BoardTemplateComponent, HeaderComponent],
+  imports: [BrowserModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

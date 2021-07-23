@@ -1,0 +1,13 @@
+:host {
+    display: block;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.header {
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
