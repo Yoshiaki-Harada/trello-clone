@@ -7,6 +7,7 @@ import { BoardTemplateComponent } from './components/02_templates/board-template
 import { HeaderComponent } from './components/03_organisms/header/header.component';
 import { ListComponent } from './components/03_organisms/list/list.component';
 import { ListHeaderComponent } from './components/04_molecules/list-header/list-header.component';
+import { CardComponent } from './components/04_molecules/card/card.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ListHeaderComponent } from './components/04_molecules/list-header/list-
     HeaderComponent,
     ListComponent,
     ListHeaderComponent,
+    CardComponent,
   ],
   imports: [BrowserModule],
   providers: [],
