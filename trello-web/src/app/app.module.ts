@@ -6,8 +6,9 @@ import { BoardPageComponent } from './components/01_pages/board-page/board-page.
 import { BoardTemplateComponent } from './components/02_templates/board-template/board-template.component';
 import { HeaderComponent } from './components/03_organisms/header/header.component';
 import { ListComponent } from './components/03_organisms/list/list.component';
-import { ListHeaderComponent } from './components/04_molecules/list-header/list-header.component';
+import { ListHeaderComponent } from './components/05_atoms/list-header/list-header.component';
 import { CardComponent } from './components/04_molecules/card/card.component';
+import { AddCardButtonComponent } from './components/05_atoms/add-card-button/add-card-button.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { CardComponent } from './components/04_molecules/card/card.component';
     ListComponent,
     ListHeaderComponent,
     CardComponent,
+    AddCardButtonComponent,
   ],
   imports: [BrowserModule],
   providers: [],
