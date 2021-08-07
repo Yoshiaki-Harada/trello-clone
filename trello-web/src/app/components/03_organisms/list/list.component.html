@@ -3,5 +3,8 @@
     <div class="card-list">
         <app-card></app-card>
     </div>
-    <app-add-card-button></app-add-card-button>
+    <app-card-text-editor *ngIf="isAddCardMode; else elseBlock"></app-card-text-editor>
+    <ng-template #elseBlock>
+        <app-add-card-button (openEditorEvent)="openEditor()"></app-add-card-button>
+    </ng-template>
 </div>

@@ -9,6 +9,7 @@ import { ListComponent } from './components/03_organisms/list/list.component';
 import { ListHeaderComponent } from './components/05_atoms/list-header/list-header.component';
 import { CardComponent } from './components/04_molecules/card/card.component';
 import { AddCardButtonComponent } from './components/05_atoms/add-card-button/add-card-button.component';
+import { CardTextEditorComponent } from './components/04_molecules/card-text-editor/card-text-editor.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AddCardButtonComponent } from './components/05_atoms/add-card-button/ad
     ListHeaderComponent,
     CardComponent,
     AddCardButtonComponent,
+    CardTextEditorComponent,
   ],
   imports: [BrowserModule],
   providers: [],

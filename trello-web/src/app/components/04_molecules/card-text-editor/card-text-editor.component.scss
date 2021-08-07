@@ -1,0 +1,23 @@
+:host {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    resize: none;
+    min-height: 54px;
+    border: none;
+    border-radius: 3px;
+    padding: 6px 8px 2px;
+}
+
+textarea:focus {
+    border: none;
+    box-shadow: none;
+    outline: none;
+}

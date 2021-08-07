@@ -25,4 +25,28 @@ app-list-header {
 
 app-add-card-button {
     align-self: flex-start;
+    width: 212px;
+    margin-bottom: 8px;
+}
+
+.editor {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    resize: none;
+    min-height: 54px;
+    border: none;
+    border-radius: 3px;
+}
+
+textarea:focus {
+    border: none;
+    box-shadow: none;
 }
