@@ -1,4 +1,3 @@
-import { conditionallyCreateMapObjectLiteral } from '@angular/compiler/src/render3/view/util';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({

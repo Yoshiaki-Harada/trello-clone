@@ -1,6 +1,7 @@
 <div class="template-wrapper" [ngStyle]="{'background-image': getUrl()}">
     <app-header></app-header>
-    <div class="kanban">
-        <app-list></app-list>
-    </div>
+    <corner-rounded-button (click)="addCard($event)">
+        <span>＋</span><span>新規メモ</span>
+    </corner-rounded-button>
+    <card-list [memos]="memos" (saveEvent)="onSave($event)"> </card-list>
 </div>
