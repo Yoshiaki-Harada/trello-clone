@@ -2,6 +2,7 @@ import { Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'editable-card',
@@ -9,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./editable-card.component.scss'],
 })
 export class EditableCardComponent implements OnInit {
-  @Input() memo: { title: string; text: string } = { title: '', text: '' };
-  @Output() focusoutOfCard: EventEmitter<{ title: string; text: string }> =
-    new EventEmitter();
+  @Input() memo: { title: string; text: string; isNew: boolean } = {
+    title: '',
+    text: '',
+    isNew: true,
+  };
+  @Output() focusoutOfCard: EventEmitter<{
+    title: string;
+    text: string;
+    isNew: boolean;
+  }> = new EventEmitter();
+
   constructor() {}
 
   ngOnInit(): void {}

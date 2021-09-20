@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Memo } from '../domain/memo';
 import { MemoContent } from '../domain/memo-content';
+import { Text } from '../domain/text';
+import { Title } from '../domain/title';
 import { MemoPort } from '../gateway/memo-port';
 import { MemoPresenter } from '../presenter/memo-presenter';
 
@@ -10,8 +12,15 @@ export class MemoUsecase {
     private memoPort: MemoPort,
     private memoPresenter: MemoPresenter
   ) {}
+
+  addEntry() {
+    this.memoPresenter.storeEntry(new MemoContent(new Title(''), new Text('')));
+  }
+
   add(memo: MemoContent) {
-    this.memoPort.add(memo);
+    if (memo.isEntered()) {
+      this.memoPort.add(memo);
+    }
     this.display();
   }
 
@@ -22,7 +31,6 @@ export class MemoUsecase {
 
   display() {
     const memos = this.memoPort.find();
-    console.log(memos);
     this.memoPresenter.store(memos);
   }
 }

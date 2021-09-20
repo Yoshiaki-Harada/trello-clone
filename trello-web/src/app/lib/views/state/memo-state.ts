@@ -21,4 +21,5 @@ export type MemoItem = {
   id: string;
   title: string;
   text: string;
+  isNew: boolean;
 };

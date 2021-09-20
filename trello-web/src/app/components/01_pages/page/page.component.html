@@ -1,0 +1,7 @@
+<div class="img-wrapper" [ngStyle]="{'background-image': getUrl()}">
+    <app-header></app-header>
+    <corner-rounded-button (click)="addCard($event)">
+        <span>＋</span><span>新規メモ</span>
+    </corner-rounded-button>
+    <card-list [memos]="memos" (saveEvent)="onSave($event)" (updateEvent)="onUpdate($event)"> </card-list>
+</div>
