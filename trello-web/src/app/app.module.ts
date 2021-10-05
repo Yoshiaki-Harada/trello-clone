@@ -13,6 +13,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LibModule } from './lib/lib.module';
 import { CornerRoundedButton } from './components/04_atoms/corner-rounded-button/corner-rounded-button.component';
 import { CardFooterComponent } from './components/03_molecules/card-footer/card-footer.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TagListComponent } from './components/03_molecules/tag-list/tag-list.component';
+import { EditableTagComponent } from './components/03_molecules/editable-tag/editable-tag.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,8 +28,16 @@ import { CardFooterComponent } from './components/03_molecules/card-footer/card-
     ButtonComponent,
     CornerRoundedButton,
     CardFooterComponent,
+    TagListComponent,
+    EditableTagComponent,
   ],
-  imports: [BrowserModule, FormsModule, LibModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    LibModule,
+    ReactiveFormsModule,
+    NgbModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

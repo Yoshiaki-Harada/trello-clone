@@ -9,6 +9,10 @@ import { MemoPort } from './memo-port';
 
 @Injectable()
 export class MemoGateway extends MemoPort {
+  constructor(private driver: InMemoryDriver) {
+    super();
+  }
+
   find(): Memos {
     const lists = this.driver
       .getMemo()
@@ -21,21 +25,24 @@ export class MemoGateway extends MemoPort {
       );
     return new Memos(lists);
   }
-  constructor(private driver: InMemoryDriver) {
-    super();
-  }
+
   add(memo: MemoContent): void {
-    this.driver.saveMemo({
+    this.driver.addMemo({
       title: memo.title.value,
       text: memo.text.value,
       id: Math.random().toString(32).substring(2),
     });
   }
+
   update(memo: Memo): void {
     this.driver.updateMemo({
       id: memo.id.value,
       title: memo.title.value,
       text: memo.text.value,
     });
+  }
+
+  delete(id: MemoId): void {
+    this.driver.deleteMemo(id.value);
   }
 }

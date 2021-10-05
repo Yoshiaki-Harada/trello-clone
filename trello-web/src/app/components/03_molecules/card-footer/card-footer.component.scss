@@ -4,7 +4,16 @@
     justify-content: space-between;
 }
 
+
 .menu-list {
     height: 50px;
     border: 1px solid black;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.dropdown-toggle::after {
+    border: none;
 }

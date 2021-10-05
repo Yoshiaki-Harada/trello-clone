@@ -1,1 +1,1 @@
-<editable-card *ngFor="let item of memos; let i = index" [memo]="item" (focusoutOfCard)="onSave(i, $event)"></editable-card>
+<editable-card *ngFor="let item of memos; let i = index" [memo]="item" (focusoutOfCard)="onSave(i, $event)" (deleteEvent)="onDelete(i, $event)" (tagAddEvent)="onTagAdd($event)" (tagUpdateEvent)="onTagUpdate($event)"></editable-card>

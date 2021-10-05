@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Memo } from '../domain/memo';
+import { Memo, MemoId } from '../domain/memo';
 import { MemoContent } from '../domain/memo-content';
 import { Text } from '../domain/text';
 import { Title } from '../domain/title';
@@ -32,5 +32,10 @@ export class MemoUsecase {
   display() {
     const memos = this.memoPort.find();
     this.memoPresenter.store(memos);
+  }
+
+  delete(id: MemoId) {
+    this.memoPort.delete(id);
+    this.display();
   }
 }

@@ -1,0 +1,4 @@
+<div>
+    <editable-tag [tag]="t" *ngFor="let t of tags; let i = index" (saveTagEvent)="onUpdate(i, $event)"></editable-tag>
+    <editable-tag [tag]="null" (saveTagEvent)="onAdd($event)"></editable-tag>
+</div>

@@ -1,5 +1,5 @@
 <div (focusout)="onFocusout()">
     <input type="text" [(ngModel)]="memo.title" class="title">
     <textarea class="body" [(ngModel)]="memo.text"></textarea>
-    <card-footer></card-footer>
 </div>
+<card-footer (deleteEvent)="onDelete()" (tagAddEvent)="onAddTag($event)" (tagUpdateEvent)="onTagUpdate($event)"></card-footer>

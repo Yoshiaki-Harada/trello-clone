@@ -1,7 +1,7 @@
-<div class="tag">tag1</div>
-<div>
-    <i class="fas fa-bars"></i>
-    <div class="menu-list" *ngIf="isOpen">
-        <div>削除</div>
+<tag-list (addEvent)="onTagAdd($event)" (updateEvent)="onTagUpdate($event)"></tag-list>
+<div ngbDropdown>
+    <i class="fas fa-ellipsis-v"  ngbDropdownToggle></i>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem (click)="onDelete()">削除</button>
     </div>
 </div>

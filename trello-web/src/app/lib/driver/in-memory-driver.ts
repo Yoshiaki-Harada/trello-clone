@@ -1,6 +1,6 @@
 export type Memo = { title: string; text: string; id: string };
 export class InMemoryDriver {
-  saveMemo(memo: Memo) {
+  addMemo(memo: Memo) {
     const memos = this.getMemo();
     localStorage.setItem('memos', JSON.stringify([memo, ...memos]));
   }
@@ -10,6 +10,14 @@ export class InMemoryDriver {
     const target = memos.findIndex((e) => e.id === memo.id);
     memos.splice(target, 1, memo);
     localStorage.setItem('memos', JSON.stringify(memos));
+  }
+
+  deleteMemo(id: string) {
+    const memos = this.getMemo();
+    localStorage.setItem(
+      'memos',
+      JSON.stringify(memos.filter((e) => e.id !== id))
+    );
   }
 
   getMemo(): Memo[] {

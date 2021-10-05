@@ -17,11 +17,16 @@ export class CardListComponent implements OnInit {
     isNew: boolean;
   }> = new EventEmitter();
   @Output() updateEvent: EventEmitter<{
+    id: string;
     title: string;
     text: string;
     isNew: boolean;
-    index: number;
   }> = new EventEmitter();
+  @Output() deleteEvenet: EventEmitter<string> = new EventEmitter();
+  @Output() tagUpdateEvent: EventEmitter<{ memoId: string; tag: string }> =
+    new EventEmitter();
+  @Output() tagAddEvent: EventEmitter<string> = new EventEmitter();
+
   constructor() {}
 
   ngOnInit(): void {}
@@ -34,6 +39,21 @@ export class CardListComponent implements OnInit {
       this.saveEvent.emit(event);
       return;
     }
-    this.updateEvent.emit({ ...event, index });
+    this.updateEvent.emit({ ...event, id: this.memos[index].id });
+  }
+
+  onDelete(index: number, event: any) {
+    this.deleteEvenet.emit(this.memos[index].id);
+  }
+
+  onTagUpdate(event: { index: number; tag: string }) {
+    this.tagUpdateEvent.emit({
+      memoId: this.memos[event.index].id,
+      tag: event.tag,
+    });
+  }
+
+  onTagAdd(tag: string) {
+    this.tagAddEvent.emit(tag);
   }
 }

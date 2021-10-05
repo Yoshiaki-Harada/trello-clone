@@ -32,16 +32,27 @@ export class PageComponent implements OnInit {
     );
   }
 
-  onUpdate(event: { index: number; title: string; text: string }) {
+  onUpdate(event: { id: string; title: string; text: string }) {
     this.memoUsecase.update(
       new Memo(
-        new MemoId(this.memos[event.index].id!!),
+        new MemoId(event.id),
         new MemoContent(new Title(event.title), new Text(event.text))
       )
     );
   }
 
+  onDelete(id: string) {
+    this.memoUsecase.delete(new MemoId(id));
+  }
+
   getUrl() {
     return `url(${this.bgImageUrl})`;
+  }
+
+  onTagAdd(tag: string) {
+    console.log(tag);
+  }
+  onTagUpdate(event: { memoId: string; tag: string }) {
+    console.log(event);
   }
 }
